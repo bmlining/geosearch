@@ -1,0 +1,26 @@
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
+	sourceCompatibility = 1.8
+	version = '0.1'
+
+    repositories {
+       mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.apache.lucene:lucene-spatial:4.10.3'
+        testCompile 'junit:junit:4.11'
+    }
+
+
+    jar {
+	manifest {
+        attributes 'Implementation-Version': version,
+			   'Provider': 'gradle'
+    }
+
+    }
+}
